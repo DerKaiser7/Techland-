@@ -1,8 +1,8 @@
 <?php
+	require 'techland.inc.php';
 
 if (isset($_POST['login-submit'])) {
 	
-	require 'techland.inc.php';
 
 	$uid = $_POST['uid'];
 	$pwd = $_POST['pwd'];
@@ -20,11 +20,12 @@ if (isset($_POST['login-submit'])) {
       exit();
     }	
     else {
-    	mysqli_stmt_bind_param($stmt, "ss", $uid, $pwd);
+    	mysqli_stmt_bind_param($stmt, "ss", $uid, $uid);
     	mysqli_stmt_execute($stmt);
     	$result = mysqli_stmt_get_result($stmt);
     	if ($row = mysqli_fetch_assoc($result)) {
-    		$pwdCheck = password_verify($pwd, $row['pwd']);
+			$pwdCheck = password_verify($pwd, $row['user_pwd']);
+			
         // If they don't match then we create an error message!
         if ($pwdCheck == false) {
           // If there is an error we send the user back to the signup page.
