@@ -6,15 +6,18 @@
 <div class="signup">
 	<div class="row">
 		<div class="col-lg-12" id="category">
-			Before you can join Techland, we need to verify your Email address. Please enter it below:
+			Before you can join Techland, you need to sign up. Please signup below:
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12">
-			<b>Email:</b> 
-			<form action="">
-				<input type="text" name="email" size="24">
-				<button type="emailsubmit">Submit</button>
+		<div class="col-lg-12"> 
+			<form action="includes/usersignup.inc.php" class="signupform" method="POST">
+				<input type="text" name="first" placeholder="First Name">
+				<input type="text" name="last" placeholder="Last Name">
+				<input type="text" name="email" placeholder="Email">
+				<input type="text" name="uid" placeholder="Username">
+				<input type="Password" name="pwd" placeholder="Password">
+				<button type="submit" name="signup-submit">Sign Up</button>
 			</form>
 		</div>
 	</div>

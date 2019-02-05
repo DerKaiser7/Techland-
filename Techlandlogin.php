@@ -12,10 +12,10 @@
 	</div>
 	<div class="row" id="loginform">
 		<div class="col-lg-12">
-			<form action="">
-				Username: <input type="text" name="email" size="24">
-				Password: <input type="password" name="password" size="24">
-				<button type="emailsubmit">Login</button>
+			<form action="includes/techlandlogin.inc.php" method="POST">
+				Username: <input type="text" name="uid" size="24">
+				Password: <input type="password" name="pwd" size="24">
+				<button type="submit" name="login-submit">Login</button>
 			</form>
 		</div>
 	</div>
