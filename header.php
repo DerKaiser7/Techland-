@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php 
+	session_start();
+?> 
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" width="400">
@@ -93,9 +96,29 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				Welcome, <b>Guest</b>: 
-				<a href="TechlandSignup.php">Join Techland</a> /
-				<a href="Techlandlogin.php"><b>LOGIN!</b></a> /
+				Welcome, 
+				<?php
+					if(isset($_SESSION['uid'])) {
+						echo  "<b>".$_SESSION['uid']."</b>";
+					} else {
+						echo "<b>Guest</b>";
+					}
+				?>
+
+				<?php 
+					if(!isset($_SESSION['uid'])) {
+
+				?>
+						<a href='TechlandSignup.php'>Join Techland</a> /
+						<a href='Techlandlogin.php'><b>LOGIN!</b></a> /
+				<?php
+					} else {
+				?>
+						<a href='TechlandLogout.php'>Logout</a> /
+				<?php
+					}
+				?>
+				
 				<a href="">Trending</a> /
 				<a href="">Recent</a> /
 				<a href="">New</a>
