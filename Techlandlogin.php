@@ -1,4 +1,9 @@
 <?php
+	session_start();
+	if (isset($_SESSION['uid'])) {
+		header("Location: Tech.php");
+		exit;
+	}
 	require 'header.php'
 ?>
 

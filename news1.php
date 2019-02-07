@@ -1,57 +1,77 @@
 <?php
+	
+	include_once('includes/techland.inc.php');
+
+	if(!isset($_GET['id'])) {
+		header('Location: Tech.php');
+		exit();
+	}
+
+	$id = $_GET['id'];
+	$title = "";
+	$content = "";
+
+	$sql = "SELECT * FROM questions where Question_id = ".$id;
+	$result = mysqli_query($conn, $sql);
+
+	if ($row = mysqli_fetch_assoc($result)) {
+		$title = $row['title'];
+		$content = $row['Question_details'];
+	}
+
+	//TODO:
+	//Assignment: write sql query to fetch comments and display comment for each questions/topic
+	
+
 	require 'header.php'
 ?>
 
 <div class="news">
 		<div class="row">
 			<div class="col-lg-12" id="category">
-				<b>New brain training technology revealed(pictures)</b>
+				<b><?php echo $title; ?></b>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12"> 
-				<p class="news-detail">A new technology that could help humans train their brain on what kind of information you want it to hold and for how long has been developed. According to wikileaks, the technology has been in development since early 2016 and is now ready to be launched with a sneak peek provided. See images below</p> 
-				<img src="img/brain train.jpg">
-				<img src="img/brain train4.jpg">
+				<p class="news-detail">
+					<?php echo $content ?>
+				</p> 
 			</div>
 		</div>
 </div>
-<div class="comments">
+
+<?php
+	$getCommentsQuery = "SELECT a.`Answer_details` as answer, a.`Time_answered` as created_at,
+	u.user_uid,
+	concat(u.user_last, u.user_first) as name
+	FROM `answers` as a, users as u
+	WHERE 
+	a.`User_uid` = u.user_id AND
+	a.`Question_id` = ".$id;
+
+	$result = mysqli_query($conn, $getCommentsQuery);
+
+	while ($row = mysqli_fetch_assoc($result)) {
+?>
+	<div class="comments">
 		<div class="row">
 			<div class="col-lg-12" id="replies">
-				<a href="news1.php">Re: New brain training technology revealed(pictures)</a> by <b>Mcsteve100</b>
+				<a href="news1.php">Re: <?php echo $title; ?></a> by <b><?php echo $row['name'] ?></b>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12" id="main-comment"> 
-				Wow!! This is an amazing new technology, I actually can't wait to make use of this. Finally, we don't have to keep unnecessary info in our heads and we don't have to forget potentially war causing information like our girlfriend's birthday. Lmaooooo 
+				<?php echo $row['answer'] ?>
 			</div>
 		</div>
 </div> 
-<div class="comments">
-	<div class="row">
-			<div class="col-lg-12" id="replies">
-				<a href="news1.php">Re: New brain training technology revealed(pictures)</a> by <b>Phemi</b>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12" id="main-comment"> 
-				This is lovely, wonder when it's coming to Nigeria though. Really excited to see how it works. 
-			</div>
-		</div>
-</div>
-<div class="comments">
-	<div class="row">
-			<div class="col-lg-12" id="replies">
-				<a href="news1.php">Re: New brain training technology revealed(pictures)</a> by <b>Vic223</b>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12" id="main-comment"> 
-				Alas!! Now I don't have to get into a quarrel with my wife over not remembering what she asked me to remind her about. 
-			</div>
-		</div>
-</div>
+<?php
+	}
+
+?>	
+
+
 <div class="row">
 	<div class="col-lg-12">
 		(<b>0</b>)
