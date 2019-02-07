@@ -52,15 +52,16 @@
 		<div class="row">
 			<div class="col-lg-12" id="category">
 				<a href="">Featured Links</a> / 
-				<a href="facebook.com/stephenjohnson01">Facebook</a> / 
-				<a href="twitter.com/the_bimss">Twitter</a> /
+				<a href="http://facebook.com/stephenjohnson01">Facebook</a> / 
+				<a href="http://twitter.com/the_bimss">Twitter</a> /
 				<a href="">How to Advertise</a>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12"> 
-				<a href="awabike.com">Awabike Launches First bike sharing scheme in Nigeria</a> <br>
-				<a href="">New iPhone features leaks (pictures)</a> <br>
+				<a href="http://awabike.com">Awabike Launches First bike sharing scheme in Nigeria</a> <br>
+				<a href="news1.php">New brain training technology revealed(pictures)</a> <br>
+				<a href="">New iPhone features leak (pictures)</a> <br>
 				<a href="">Appeal Court Can't Stay A Criminal Case - Appeal Court To Onnoghen</a> <br>
 				<a href="">Atiku/Obi On The Candidate: The Interviewer Accused Of Bias As Nigerians React (Pics)</a> <br>
 				<a href="">DJ Cuppy Pictured In The Studio As She Works On A New Song</a>

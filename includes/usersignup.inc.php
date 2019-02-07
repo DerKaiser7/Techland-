@@ -1,8 +1,9 @@
 <?php
 
+	require 'techland.inc.php';
+
 if (isset($_POST['signup-submit'])) {
 	
-	require 'techland.inc.php';
 
 	$first = $_POST['first'];
 	$last = $_POST['last'];

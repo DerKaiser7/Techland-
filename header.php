@@ -26,10 +26,21 @@
 			width: 960px;
   			border: 1px solid #444;
   			overflow: hidden;
+  			font-weight: bold;
   			padding-bottom: 20px;
   			margin-left: 160px;
   			margin-top: 25px;
   			border-radius: 15px;
+  		}
+  		.comments{
+  			width: 960px;
+  			border: 1px solid #444;
+  			overflow: hidden;
+  			font-weight: normal;
+  			padding-bottom: 20px;
+  			margin-left: 160px;
+  			border-radius: 10px;
+  			padding-left: 5px;
   		}
   		.news, .pagefooter{
   			padding-top: 5px
@@ -43,9 +54,26 @@
 			font-family: arial;
 			font-size: 12px;
 			color: #111;
-		  }
-		  #category{
+		}
+		.news-detail{
+		  	font-size: 20px;
+		  	font-style: cursive;
+		  	font-weight: 300;
+		  	text-align: left;
+		  	padding-left: 5px;
+		}
+		.g{
+		  	color: #185518;
+		}
+		#category{
   			border-bottom: 1px solid #444
+  		}
+  		#replies{
+  			text-align: left;
+  			border-bottom: 1px solid #444;
+  		}
+  		#main-comment{
+  			text-align: left;
   		}
   		#loginform{
   			margin-top: 10px;
@@ -60,7 +88,7 @@
 	<div class="pageheader">
 		<div class="row">
 			<div class="col-lg-12">
-				<a href="Tech.php"><h2>Techland Forum</h2></a>
+				<a href="Tech.php" class="g"><h2>Techland Forum</h2></a>
 			</div>
 		</div>
 		<div class="row">

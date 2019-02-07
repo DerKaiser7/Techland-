@@ -24,7 +24,7 @@
 <div class="signup">
 	<div class="row">
 		<div class="col-lg-12" id="category">
-			<b>Reset you Password</b>:
+			<b>Reset your Password</b>:
 		</div>
 	</div>
 	<div class="row">
