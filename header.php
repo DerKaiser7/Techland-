@@ -17,7 +17,7 @@
 			font-family: Verdana, sans-serif;
 			font-size: 10pt;
 			background: #E8ECE0;
-			width: 100%;
+			width: 90%;
 			max-width: 1280px;
 		}
 		p{
